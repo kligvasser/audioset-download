@@ -19,12 +19,11 @@ def get_arguments():
 if __name__ == "__main__":
     args = get_arguments()
 
-    d = Downloader(
+    downloader = Downloader(
         root_path=args.root_path,
         labels=None,
         n_jobs=args.n_jobs,
         download_type=args.download_type,
         copy_and_replicate=args.copy_and_replicate,
-        csv_path=args.csv_path,
     )
-    d.download(format=args.format)
+    downloader.download(format=args.format, csv_path=args.csv_path)

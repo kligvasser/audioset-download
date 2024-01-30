@@ -1,0 +1,5 @@
+python3 main.py --root-path /home/klig/datasets/audioset/audios/unbalanced_train_segments/unbalanced_train_segments_part00 --csv-path /home/klig/datasets/audioset/metadata/unbalanced_partial_csvs/unbalanced_train_segments_part00.csv
+python3 main.py --root-path /home/klig/datasets/audioset/audios/unbalanced_train_segments/unbalanced_train_segments_part01 --csv-path /home/klig/datasets/audioset/metadata/unbalanced_partial_csvs/unbalanced_train_segments_part01.csv
+#python3 main.py --root-path /home/klig/datasets/audioset/audios/unbalanced_train_segments/unbalanced_train_segments_part02 --csv-path /home/klig/datasets/audioset/metadata/unbalanced_partial_csvs/unbalanced_train_segments_part02.csv
+#python3 main.py --root-path /home/klig/datasets/audioset/audios/unbalanced_train_segments/unbalanced_train_segments_part03 --csv-path /home/klig/datasets/audioset/metadata/unbalanced_partial_csvs/unbalanced_train_segments_part03.csv
+#python3 main.py --root-path /home/klig/datasets/audioset/audios/unbalanced_train_segments/unbalanced_train_segments_part04 --csv-path /home/klig/datasets/audioset/metadata/unbalanced_partial_csvs/unbalanced_train_segments_part04.csv
