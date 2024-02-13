@@ -48,12 +48,8 @@ class Downloader:
             sep=",",
         )
 
-        self.display_to_machine_mapping = dict(
-            zip(class_df["display_name"], class_df["mid"])
-        )
-        self.machine_to_display_mapping = dict(
-            zip(class_df["mid"], class_df["display_name"])
-        )
+        self.display_to_machine_mapping = dict(zip(class_df["display_name"], class_df["mid"]))
+        self.machine_to_display_mapping = dict(zip(class_df["mid"], class_df["display_name"]))
         return
 
     def download(self, format="vorbis", quality=5, csv_path=None):
@@ -86,9 +82,7 @@ class Downloader:
                 engine="python",
             )
         if self.labels is not None:
-            self.real_labels = [
-                self.display_to_machine_mapping[label] for label in self.labels
-            ]
+            self.real_labels = [self.display_to_machine_mapping[label] for label in self.labels]
             metadata = metadata[
                 metadata["positive_labels"].apply(
                     lambda x: any([label in x for label in self.real_labels])
@@ -133,15 +127,8 @@ class Downloader:
 
         # Create the path for each label that is associated with the file
         if self.copy_and_replicate:
-            for label in positive_labels.split(","):
-                display_label = self.machine_to_display_mapping[label]
-                os.makedirs(os.path.join(self.root_path, display_label), exist_ok=True)
+            return
         else:
-            display_label = self.machine_to_display_mapping[
-                positive_labels.split(",")[0]
-            ]
-            os.makedirs(os.path.join(self.root_path, display_label), exist_ok=True)
-
             # Download the file using yt-dlp
             # store in the folder
             os.system(

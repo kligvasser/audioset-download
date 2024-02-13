@@ -6,11 +6,15 @@ def get_arguments():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--root-path", type=str, default="", required=True, help="")
-    parser.add_argument("--n-jobs", type=int, default=12, help="")
-    parser.add_argument("--download-type", type=str, default="balanced_train", help="")
+    parser.add_argument("--n-jobs", type=int, default=32, help="")
     parser.add_argument(
-        "--copy-and-replicate", default=False, action="store_true", help=""
+        "--download-type",
+        type=str,
+        default="balanced_train",
+        choices=["unbalanced_train", "balanced_train", "eval"],
+        help="",
     )
+    parser.add_argument("--copy-and-replicate", default=False, action="store_true", help="")
     parser.add_argument("--csv-path", type=str, default=None, help="")
     parser.add_argument("--format", type=str, default="wav", help="")
     return parser.parse_args()
